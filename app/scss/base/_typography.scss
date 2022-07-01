@@ -1,0 +1,50 @@
+@use '../abstracts' as *;
+
+h1,
+h2,
+h3,
+a {
+  font-family: $ff-josefin-sans;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h2,
+h3 {
+  font-size: rem(64);
+  text-align: center;
+}
+
+p {
+  font-size: rem(30);
+  font-family: $ff-alata;
+  font-weight: 400;
+  text-align: center;
+  line-height: rem(49);
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+.header__heading {
+  font-size: rem(78);
+  line-height: rem(76);
+  letter-spacing: rem(1);
+  color: $clr-white;
+}
+
+.menu__link {
+  // font-family: $ff-josefin-sans;
+  font-weight: 300;
+  color: $clr-white;
+
+  @include breakpoint-down(large) {
+    &--nav {
+      font-size: rem(48);
+      text-transform: uppercase;
+    }
+  }
+}

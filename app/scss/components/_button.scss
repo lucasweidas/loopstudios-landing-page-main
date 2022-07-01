@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &--hamburger {
+    width: rem(48);
+    height: rem(32);
+  }
+
+  &--close {
+    width: rem(38);
+    height: rem(38);
+  }
+}

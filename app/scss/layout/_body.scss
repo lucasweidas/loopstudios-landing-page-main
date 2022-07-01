@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+.mobile-design,
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0.3;
+}

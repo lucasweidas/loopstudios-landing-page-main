@@ -1,0 +1,10 @@
+@use '../abstracts' as *;
+
+.logo {
+  display: inline-flex;
+
+  &--header {
+    width: rem(288);
+    height: rem(48);
+  }
+}

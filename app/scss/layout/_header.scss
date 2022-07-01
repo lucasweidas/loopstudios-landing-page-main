@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.header {
+  width: 100%;
+  height: rem(1300);
+  background: url('/images/mobile/image-hero.jpg') top left / cover no-repeat;
+
+  &__container {
+    padding: $padding-header;
+    // padding: rem(80) rem(46) rem(452);
+  }
+
+  &__banner {
+    width: min(100%, rem(658));
+    // height: rem(396);
+    padding-block: rem(50) rem(34);
+    padding-inline: rem(48);
+    margin-block-start: rem(324);
+    border: rem(4) solid $clr-white;
+  }
+}

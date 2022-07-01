@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.link_hover {
+  &::after {
+    content: '';
+    width: rem(24);
+    height: rem(2);
+    position: absolute;
+    bottom: rem(-8);
+    background-color: currentColor;
+    transform: scaleX(0);
+    transition: transform 200ms;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    transform: scaleX(1);
+  }
+}

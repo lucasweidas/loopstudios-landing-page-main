@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+.interactive {
+  width: min(100%, rem(1114));
+  position: relative;
+  margin-block-start: rem(192);
+
+  &__picture {
+    display: block;
+  }
+
+  &__content {
+    padding: rem(92) rem(54);
+  }
+
+  &__heading {
+    margin-block-end: rem(36);
+  }
+}
