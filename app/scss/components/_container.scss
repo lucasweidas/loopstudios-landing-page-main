@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.container {
+  width: min(100%, rem(1114));
+  padding-inline: $padding-inline-con;
+  margin-inline: auto;
+
+  @include breakpoint(medium) {
+    &--header {
+      padding-block-start: $padding-block-start-con;
+    }
+
+    &--main {
+      padding-block: rem(192);
+    }
+
+    &--footer {
+      padding-block: rem(110) rem(20);
+    }
+  }
+}

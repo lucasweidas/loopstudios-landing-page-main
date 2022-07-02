@@ -85,6 +85,10 @@ a:visited {
   }
 }
 
+.interactive__description {
+  color: hsl(0deg, 0%, 41%);
+}
+
 .creations__link {
   font-family: "Alata", sans-serif;
   font-size: 1.75rem;
@@ -125,8 +129,7 @@ a:visited {
 }
 
 .card {
-  display: flex;
-  align-items: flex-end;
+  width: min(100%, 53.125rem);
   position: relative;
 }
 .card__picture {
@@ -140,6 +143,12 @@ a:visited {
   top: 0;
   left: 0;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+}
+.card__img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  object-position: top center;
 }
 .card__heading {
   width: 9ch;
@@ -184,7 +193,7 @@ a:visited {
     bottom: 0;
     z-index: 100;
     background-color: hsl(0deg, 0%, 0%);
-    padding: 5rem 2.875rem 0;
+    padding: 5rem 3rem;
     overflow-y: auto;
     transform: translateX(-100%);
     visibility: hidden;
@@ -271,8 +280,16 @@ a:visited {
 }
 
 .interactive {
-  width: min(100%, 69.625rem);
   position: relative;
+}
+.interactive__picture {
+  justify-content: center;
+}
+.interactive__img {
+  width: min(100%, 53.125rem);
+  height: 28rem;
+  object-fit: cover;
+  object-position: top center;
 }
 .interactive__content {
   padding: 5.9375rem 3.375rem;
@@ -300,7 +317,9 @@ a:visited {
   color: hsl(0deg, 0%, 100%);
 }
 .creations__cards {
+  width: 100%;
   display: grid;
+  justify-items: center;
   gap: 3rem 1.875rem;
   margin-block: 6rem 4.1875rem;
 }
@@ -323,6 +342,23 @@ a:visited {
   justify-content: center;
   align-items: center;
   column-gap: 2rem;
+}
+
+.container {
+  width: min(100%, 69.625rem);
+  padding-inline: 3rem;
+  margin-inline: auto;
+}
+@media (min-width: 46.875em) {
+  .container--header {
+    padding-block-start: 5rem;
+  }
+  .container--main {
+    padding-block: 12rem;
+  }
+  .container--footer {
+    padding-block: 6.875rem 1.25rem;
+  }
 }
 
 .body.active {
@@ -348,11 +384,7 @@ a:visited {
   height: 81.25rem;
   background: url("/images/mobile/image-hero.jpg") top left/cover no-repeat;
 }
-.header__container {
-  padding: 5rem 2.875rem 0;
-}
 .header__banner {
-  width: min(100%, 41.125rem);
   padding-block: 3.125rem 2.125rem;
   padding-inline: 3rem;
   margin-block-start: 20.25rem;
@@ -365,19 +397,11 @@ a:visited {
   align-items: center;
 }
 
-.main {
-  padding: 12rem 3rem;
-}
-
 .footer {
   background-color: hsl(0deg, 0%, 0%);
-  padding: 6.875rem 3rem 0;
 }
 .footer__copyright {
-  padding-block: 2rem;
-}
-.footer__attribution {
-  padding-block: 1.5rem;
+  margin-block: 2rem 2.8125rem;
 }
 .footer__attribution a {
   display: inline;

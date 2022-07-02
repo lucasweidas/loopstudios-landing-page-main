@@ -21,9 +21,9 @@
   }
 
   &__cards {
-    // width: 100%;
-    // display: flex;
+    width: 100%;
     display: grid;
+    justify-items: center;
     gap: rem(48) rem(30);
     margin-block: rem(96) rem(67);
   }

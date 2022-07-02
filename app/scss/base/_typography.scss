@@ -52,6 +52,11 @@ a:visited {
   }
 }
 
+.interactive__description {
+  color: $clr-very-dark-gray;
+  // color: hsl(0, 0%, 49%);
+}
+
 .creations__link {
   font-family: $ff-alata;
   font-size: rem(28);
@@ -90,7 +95,8 @@ a:visited {
       text-transform: none;
       color: inherit;
 
-      &:hover,&:focus-visible {
+      &:hover,
+      &:focus-visible {
         color: $clr-dark-gray;
       }
     }

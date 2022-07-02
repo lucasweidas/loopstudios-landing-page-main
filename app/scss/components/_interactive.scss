@@ -1,9 +1,18 @@
 @use '../abstracts' as *;
 
 .interactive {
-  width: min(100%, rem(1114));
   position: relative;
-  // margin-block-start: rem(192);
+
+  &__picture {
+    justify-content: center;
+  }
+
+  &__img {
+    width: min(100%, rem(850));
+    height: rem(448);
+    object-fit: cover;
+    object-position: top center;
+  }
 
   &__content {
     padding: rem(95) rem(54);

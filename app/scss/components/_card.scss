@@ -1,8 +1,7 @@
 @use '../abstracts' as *;
 
 .card {
-  display: flex;
-  align-items: flex-end;
+  width: min(100%, rem(850));
   position: relative;
 
   &__picture {
@@ -17,6 +16,13 @@
       left: 0;
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
     }
+  }
+
+  &__img {
+    width: 100%;
+    height: rem(240);
+    object-fit: cover;
+    object-position: top center;
   }
 
   &__heading {

@@ -2,15 +2,12 @@
 
 .footer {
   background-color: $clr-black;
-  padding: rem(110) rem(48) 0;
 
   &__copyright {
-    padding-block: rem(32);
+    margin-block: rem(32) rem(45);
   }
 
   &__attribution {
-    padding-block: rem(24);
-
     a {
       display: inline;
     }
@@ -21,13 +18,13 @@
       animation: heart-pulse 2000ms linear infinite;
 
       @keyframes heart-pulse {
-        0%{
+        0% {
           transform: scale(1);
         }
-        50%{
+        50% {
           transform: scale(1.2);
         }
-        100%{
+        100% {
           transform: scale(1);
         }
       }
