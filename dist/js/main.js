@@ -1,5 +1,6 @@
 const header = document.querySelector('[data-header]');
 const navMenu = document.querySelector('[data-nav-menu]');
+const body = document.body;
 
 header.addEventListener('click', evt => {
   if (evt.target.matches('[data-open-btn]')) {
@@ -12,7 +13,7 @@ header.addEventListener('click', evt => {
 });
 
 function openNavigationMenu(button) {
-  const elements = new Array(button, navMenu);
+  const elements = new Array(button, navMenu, body);
 
   toggleActiveClass(elements);
   if (button.classList.contains('active')) {
@@ -25,7 +26,7 @@ function openNavigationMenu(button) {
 
 function closeNavigationMenu() {
   const openMenuButton = document.querySelector('[data-open-btn]');
-  const elements = new Array(openMenuButton, navMenu);
+  const elements = new Array(openMenuButton, navMenu, body);
 
   toggleActiveClass(elements);
   openMenuButton.setAttribute('aria-expanded', false);

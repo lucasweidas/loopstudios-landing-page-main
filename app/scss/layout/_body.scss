@@ -1,5 +1,17 @@
 @use '../abstracts' as *;
 
+.body {
+  &.active {
+    animation: 0ms remove-scroll 300ms forwards;
+
+    @keyframes remove-scroll {
+      100% {
+        overflow-y: hidden;
+      }
+    }
+  }
+}
+
 .mobile-design,
 .mobile-menu {
   position: absolute;
