@@ -3,7 +3,7 @@
 .logo {
   display: inline-flex;
 
-  &--header {
+  @include breakpoint(medium) {
     width: rem(288);
     height: rem(48);
   }

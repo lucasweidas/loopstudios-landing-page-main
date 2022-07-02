@@ -1,5 +1,7 @@
 @use '../abstracts' as *;
 
 .main {
-  padding-inline: rem(48);
+  padding: rem(192) rem(48);
+  // padding-inline: rem(48);
+  // padding-block-end: rem(191);
 }

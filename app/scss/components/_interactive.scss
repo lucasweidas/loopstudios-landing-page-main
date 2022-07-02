@@ -3,14 +3,10 @@
 .interactive {
   width: min(100%, rem(1114));
   position: relative;
-  margin-block-start: rem(192);
-
-  &__picture {
-    display: block;
-  }
+  // margin-block-start: rem(192);
 
   &__content {
-    padding: rem(92) rem(54);
+    padding: rem(95) rem(54);
   }
 
   &__heading {

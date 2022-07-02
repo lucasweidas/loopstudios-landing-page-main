@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.socials {
+  @include breakpoint(medium) {
+    margin-block-start: rem(100);
+  }
+
+  &__link {
+    width: rem(48);
+    height: rem(48);
+
+    &--twitter {
+      width: rem(48);
+      height: rem(40);
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: rem(32);
+  }
+}

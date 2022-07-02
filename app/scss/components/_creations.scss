@@ -1,0 +1,30 @@
+@use '../abstracts' as *;
+
+.creations {
+  display: grid;
+  justify-items: center;
+  grid-template-areas: 'heading' 'cards' 'link';
+  margin-block-start: rem(101);
+
+  &__link {
+    width: rem(316);
+    height: rem(82);
+    grid-area: link;
+    border: rem(2) solid $clr-black;
+    transition: 200ms ease;
+    transition-property: color, background-color;
+
+    &:hover,&:focus-visible {
+      background-color: $clr-black;
+      color: $clr-white;
+    }
+  }
+
+  &__cards {
+    // width: 100%;
+    // display: flex;
+    display: grid;
+    gap: rem(48) rem(30);
+    margin-block: rem(96) rem(67);
+  }
+}

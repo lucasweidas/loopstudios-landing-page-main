@@ -41,6 +41,10 @@
         }
       }
     }
+
+    &--footer {
+      margin-block-start: rem(66);
+    }
   }
 
   &__header {
@@ -62,8 +66,19 @@
     display: flex;
     flex-direction: column;
 
-    @include breakpoint(medium) {
-      row-gap: rem(50);
+    &--header {
+      @include breakpoint(medium) {
+        row-gap: rem(50);
+      }
+    }
+
+    &--footer {
+      justify-content: center;
+      align-items: center;
+
+      @include breakpoint(medium) {
+        row-gap: rem(41);
+      }
     }
 
     @include breakpoint(large) {

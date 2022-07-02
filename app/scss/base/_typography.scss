@@ -37,14 +37,62 @@ a:visited {
 }
 
 .menu__link {
-  // font-family: $ff-josefin-sans;
+  font-family: $ff-alata;
+  font-size: rem(30);
   font-weight: 300;
+  text-transform: none;
   color: $clr-white;
 
   @include breakpoint-down(large) {
     &--nav {
+      font-family: $ff-josefin-sans;
       font-size: rem(48);
       text-transform: uppercase;
+    }
+  }
+}
+
+.creations__link {
+  font-family: $ff-alata;
+  font-size: rem(28);
+  font-weight: 400;
+  letter-spacing: rem(10);
+  color: $clr-black;
+}
+
+.card__heading {
+  font-size: rem(47);
+  text-align: start;
+  letter-spacing: rem(0.7);
+  color: $clr-white;
+}
+
+.socials {
+  &__link {
+    color: $clr-white;
+  }
+}
+
+.footer {
+  text-align: center;
+
+  &__copyright {
+    color: $clr-dark-gray;
+  }
+
+  &__attribution {
+    font-size: clamp(rem(14), 3vw, rem(16));
+    color: $clr-white;
+
+    a {
+      font-family: inherit;
+      font-size: inherit;
+      text-transform: none;
+      color: inherit;
+
+      &:hover,&:focus-visible {
+        color: $clr-dark-gray;
+      }
     }
   }
 }
