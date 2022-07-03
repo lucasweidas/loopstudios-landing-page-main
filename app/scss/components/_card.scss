@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
 .card {
+  $duration: 250ms;
   width: min(100%, rem(850));
   position: relative;
 
@@ -16,6 +17,23 @@
       left: 0;
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
     }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: hsla(0, 0%, 100%, 0.8);
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 300ms ease;
+
+      .card:hover & {
+        transform: scaleY(1);
+      }
+    }
   }
 
   &__img {
@@ -25,14 +43,68 @@
     object-position: top center;
   }
 
-  &__heading {
-    width: 9ch;
+  &__content {
     position: absolute;
     left: rem(40);
     bottom: rem(40);
 
+    &::after {
+      content: attr(data-text);
+      width: 9ch;
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-family: $ff-josefin-sans;
+      font-weight: 300;
+      color: $clr-black;
+      text-transform: uppercase;
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+      transition: clip-path $duration ease;
+      z-index: 10;
+
+      .card:nth-child(4) & {
+        width: 4ch;
+      }
+
+      .card:hover & {
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+      }
+    }
+  }
+
+  &__heading {
+    width: 9ch;
+    transition: clip-path $duration ease;
+
+    &:not(.text-fill) {
+      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    }
+
     .card:nth-child(4) & {
       width: 4ch;
     }
+
+    .card:hover &:not(.text-fill) {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
   }
 }
+
+// .text-fill {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   color: $clr-red;
+//   font-family: $ff-josefin-sans;
+//   font-weight: 300;
+//   text-transform: uppercase;
+//   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+
+//   &::before {
+//     content: attr(data-text);
+//   }
+
+//   .card:hover & {
+//     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+//   }
+// }

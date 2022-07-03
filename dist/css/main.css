@@ -97,7 +97,8 @@ a:visited {
   color: hsl(0deg, 0%, 0%);
 }
 
-.card__heading {
+.card__heading,
+.card__content {
   font-size: 2.9375rem;
   text-align: start;
   letter-spacing: 0.04375rem;
@@ -144,20 +145,64 @@ a:visited {
   left: 0;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
 }
+.card__picture::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: hsla(0deg, 0%, 100%, 0.8);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 300ms ease;
+}
+.card:hover .card__picture::before {
+  transform: scaleY(1);
+}
 .card__img {
   width: 100%;
   height: 15rem;
   object-fit: cover;
   object-position: top center;
 }
-.card__heading {
-  width: 9ch;
+.card__content {
   position: absolute;
   left: 2.5rem;
   bottom: 2.5rem;
 }
+.card__content::after {
+  content: attr(data-text);
+  width: 9ch;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  color: hsl(0deg, 0%, 0%);
+  text-transform: uppercase;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  transition: clip-path 250ms ease;
+  z-index: 10;
+}
+.card:nth-child(4) .card__content::after {
+  width: 4ch;
+}
+.card:hover .card__content::after {
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+.card__heading {
+  width: 9ch;
+  transition: clip-path 250ms ease;
+}
+.card__heading:not(.text-fill) {
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
 .card:nth-child(4) .card__heading {
   width: 4ch;
+}
+.card:hover .card__heading:not(.text-fill) {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
 .button {

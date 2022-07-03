@@ -65,7 +65,8 @@ a:visited {
   color: $clr-black;
 }
 
-.card__heading {
+.card__heading,
+.card__content {
   font-size: rem(47);
   text-align: start;
   letter-spacing: rem(0.7);
