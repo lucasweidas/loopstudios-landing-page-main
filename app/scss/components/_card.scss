@@ -1,18 +1,24 @@
 @use '../abstracts' as *;
 
 .card {
-  $duration: 400ms;
+  --duration: 400ms;
+  --timing: ease;
+  --transition: var(--duration) var(--timing);
   width: min(100%, rem(850));
   height: rem(240);
   position: relative;
 
   @include breakpoint(large) {
-    // width: rem(256);
+    --duration: 350ms;
+    --timing: ease-in-out;
     width: 100%;
     height: rem(450);
   }
 
   &__picture {
+    --bg-black: hsla(0, 0%, 0%, 0.7);
+    --bg-white-100: hsla(0, 0%, 100%, 0.7);
+    --bg-white-80: hsla(0, 0%, 80%, 0.9);
     position: relative;
     width: 100%;
     height: 100%;
@@ -23,28 +29,33 @@
       width: 100%;
       height: 100%;
       position: absolute;
-      top: 0;
-      left: 0;
-      transition: transform $duration ease;
+      inset: 0;
+      transition: clip-path var(--transition);
     }
 
     &::before {
-      background-color: hsla(0, 0%, 100%, 0.7);
-      transform: scaleY(0);
-      transform-origin: bottom;
+      background-image: linear-gradient(var(--bg-white-100), var(--bg-white-100));
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+
+      @include breakpoint(large) {
+        background-image: linear-gradient(to bottom, var(--bg-white-100), var(--bg-white-80));
+      }
 
       .card:hover & {
-        transform: scaleY(1);
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
       }
     }
 
     &::after {
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
-      transform: scaleY(1);
-      transform-origin: top;
+      background-image: linear-gradient(to right, var(--bg-black), transparent);
+      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+
+      @include breakpoint(large) {
+        background-image: linear-gradient(to bottom, transparent 20%, var(--bg-black));
+      }
 
       .card:hover & {
-        transform: scaleY(0);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
       }
     }
   }
@@ -52,7 +63,6 @@
   &__img {
     width: 100%;
     height: 100%;
-    // height: rem(240);
     object-fit: cover;
     object-position: top center;
   }
@@ -61,8 +71,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
   }
 
   &__heading {
@@ -72,7 +81,7 @@
     align-items: flex-end;
     margin-inline-start: rem(40);
     padding-block-end: rem(40);
-    transition: clip-path $duration ease;
+    transition: clip-path var(--transition);
 
     @include breakpoint(large) {
       margin-inline-start: rem(42);

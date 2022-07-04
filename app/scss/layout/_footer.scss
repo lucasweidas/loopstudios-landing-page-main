@@ -4,12 +4,19 @@
   background-color: $clr-black;
 
   &__copyright {
-    margin-block: rem(32) rem(45);
+    margin-block: rem(32) rem(61);
+
+    @include breakpoint(large) {
+      margin-block: 0;
+    }
   }
 
   &__attribution {
-    a {
-      display: inline;
+    line-height: normal;
+
+    @include breakpoint(large) {
+      grid-area: attribution;
+      justify-self: center;
     }
 
     .fa-heart {

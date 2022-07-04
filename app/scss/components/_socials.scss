@@ -5,13 +5,26 @@
     margin-block-start: rem(100);
   }
 
+  @include breakpoint(large) {
+    grid-area: socials;
+    margin-block-start: 0;
+  }
+
   &__link {
     width: rem(48);
     height: rem(48);
 
+    @include breakpoint(large) {
+      width: rem(24);
+      height: rem(24);
+    }
+
     &--twitter {
-      width: rem(48);
       height: rem(40);
+
+      @include breakpoint(large) {
+        height: rem(20);
+      }
     }
   }
 
@@ -20,5 +33,9 @@
     justify-content: center;
     align-items: center;
     column-gap: rem(32);
+
+    @include breakpoint(large) {
+      column-gap: rem(16);
+    }
   }
 }

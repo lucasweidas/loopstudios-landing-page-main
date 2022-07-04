@@ -8,8 +8,16 @@
     height: rem(48);
   }
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     width: rem(192);
     height: rem(32);
+  }
+
+  &--footer {
+    @include breakpoint(large) {
+      width: rem(144);
+      height: rem(24);
+      grid-area: logo;
+    }
   }
 }

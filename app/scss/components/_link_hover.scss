@@ -1,23 +1,25 @@
 @use '../abstracts' as *;
 
 .link_hover {
-  &::after {
-    content: '';
-    width: rem(24);
-    height: rem(2);
-    position: absolute;
-    bottom: rem(-8);
-    background-color: currentColor;
-    transform: scaleX(0);
-    transition: transform 200ms;
-  }
+  @include breakpoint(large) {
+    &::after {
+      content: '';
+      width: rem(24);
+      height: rem(2);
+      position: absolute;
+      bottom: rem(-8);
+      background-color: currentColor;
+      transform: scaleX(0);
+      transition: transform 250ms ease;
+    }
 
-  &.socials__link--twitter::after {
-    bottom: rem(-12);
-  }
+    &.socials__link--twitter::after {
+      bottom: rem(-10);
+    }
 
-  &:hover::after,
-  &:focus-visible::after {
-    transform: scaleX(1);
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
   }
 }
