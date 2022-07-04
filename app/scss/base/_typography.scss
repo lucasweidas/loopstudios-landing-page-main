@@ -86,6 +86,11 @@ a:visited {
   font-weight: 400;
   letter-spacing: rem(10);
   color: $clr-black;
+
+  @include breakpoint(large) {
+    font-size: rem(12);
+    letter-spacing: rem(6);
+  }
 }
 
 .card__heading {
@@ -93,6 +98,11 @@ a:visited {
   text-align: start;
   letter-spacing: rem(0.7);
   color: $clr-white;
+
+  @include breakpoint(large) {
+    font-size: rem(32);
+    letter-spacing: normal;
+  }
 }
 
 .socials {

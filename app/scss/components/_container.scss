@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .container {
-  width: min(100%, rem(1110) + 2 * var(--padding-inline-con));
+  width: min(100%, rem(1115) + 2 * var(--padding-inline-con));
   padding-inline: var(--padding-inline-con);
   margin-inline: auto;
 
@@ -18,7 +18,7 @@
       padding-block: rem(192);
     }
     @include breakpoint(large) {
-      padding-block: rem(160);
+      padding-block: rem(160) rem(184);
     }
   }
 

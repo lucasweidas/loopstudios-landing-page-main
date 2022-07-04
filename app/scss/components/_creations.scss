@@ -6,6 +6,14 @@
   grid-template-areas: 'heading' 'cards' 'link';
   margin-block-start: rem(101);
 
+  @include breakpoint(large) {
+    justify-items: flex-start;
+    align-items: center;
+    grid-template-columns: 1fr min-content;
+    grid-template-areas: 'heading link' 'cards cards';
+    margin-block-start: rem(185);
+  }
+
   &__link {
     width: rem(316);
     height: rem(82);
@@ -14,17 +22,30 @@
     transition: 200ms ease;
     transition-property: color, background-color;
 
-    &:hover,&:focus-visible {
+    &:hover,
+    &:focus-visible {
       background-color: $clr-black;
       color: $clr-white;
+    }
+
+    @include breakpoint(large) {
+      width: rem(159);
+      height: rem(42);
     }
   }
 
   &__cards {
     width: 100%;
+    grid-area: cards;
     display: grid;
     justify-items: center;
-    gap: rem(48) rem(30);
+    row-gap: rem(48);
     margin-block: rem(96) rem(67);
+
+    @include breakpoint(large) {
+      grid-template-columns: repeat(auto-fill, minmax(rem(256), 1fr));
+      gap: rem(30);
+      margin-block: rem(80) 0;
+    }
   }
 }

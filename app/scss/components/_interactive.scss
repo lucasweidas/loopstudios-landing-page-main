@@ -28,12 +28,11 @@
 
     @include breakpoint(large) {
       width: rem(542);
-      // height: rem(316);
       position: absolute;
       bottom: 0;
       right: 0;
       background-color: $clr-white;
-      padding: rem(95) 0 0 rem(97);
+      padding: min(7vw, rem(95)) 0 0 min(7vw, rem(97));
     }
   }
 
