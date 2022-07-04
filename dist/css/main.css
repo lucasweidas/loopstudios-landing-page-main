@@ -412,7 +412,6 @@ a:visited {
 @media screen and (min-width: 64em) {
   .interactive__content {
     width: 33.875rem;
-    height: 19.75rem;
     position: absolute;
     bottom: 0;
     right: 0;
