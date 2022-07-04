@@ -12,6 +12,10 @@
     transition: transform 200ms;
   }
 
+  &.socials__link--twitter::after {
+    bottom: rem(-12);
+  }
+
   &:hover::after,
   &:focus-visible::after {
     transform: scaleX(1);

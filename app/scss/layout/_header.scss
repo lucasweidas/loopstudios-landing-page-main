@@ -5,12 +5,26 @@
   height: rem(1300);
   background: url('/images/mobile/image-hero.jpg') top left / cover no-repeat;
 
+  @include breakpoint(large) {
+    height: rem(650);
+    background-image: url('/images/desktop/image-hero.jpg');
+  }
+
   &__banner {
-    // width: min(100%, rem(658));
-    // width: 100%;
-    padding-block: rem(50) rem(34);
-    padding-inline: rem(48);
-    margin-block-start: rem(324);
+    width: fit-content;
     border: rem(4) solid $clr-white;
+    padding: rem(50) rem(48) rem(34);
+    margin: rem(324) auto 0;
+
+    @include breakpoint(large) {
+      width: min(100%, rem(652));
+      border-width: rem(2);
+      padding: rem(39) rem(39) rem(27);
+      margin: rem(129) 0 0;
+    }
+  }
+
+  &__heading {
+    max-width: 12ch;
   }
 }

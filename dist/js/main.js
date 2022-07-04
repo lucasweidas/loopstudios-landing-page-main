@@ -12,6 +12,15 @@ header.addEventListener('click', evt => {
   }
 });
 
+setAttributeHeadingText();
+function setAttributeHeadingText() {
+  const cardHeadings = document.querySelectorAll('[data-card-heading]');
+
+  cardHeadings.forEach(cardHeading => {
+    cardHeading.nextElementSibling.setAttribute('data-heading-text', cardHeading.textContent);
+  });
+}
+
 function openNavigationMenu(button) {
   const elements = new Array(button, navMenu, body);
 

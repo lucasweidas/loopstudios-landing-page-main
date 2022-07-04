@@ -1,21 +1,32 @@
 @use '../abstracts' as *;
 
 .container {
-  width: min(100%, rem(1114));
-  padding-inline: $padding-inline-con;
+  width: min(100%, rem(1110) + 2 * var(--padding-inline-con));
+  padding-inline: var(--padding-inline-con);
   margin-inline: auto;
 
-  @include breakpoint(medium) {
-    &--header {
-      padding-block-start: $padding-block-start-con;
+  &--header {
+    @include breakpoint(medium) {
+      padding-block-start: var(--padding-block-start-con);
     }
+    @include breakpoint(large) {
+    }
+  }
 
-    &--main {
+  &--main {
+    @include breakpoint(medium) {
       padding-block: rem(192);
     }
+    @include breakpoint(large) {
+      padding-block: rem(160);
+    }
+  }
 
-    &--footer {
+  &--footer {
+    @include breakpoint(medium) {
       padding-block: rem(110) rem(20);
+    }
+    @include breakpoint(large) {
     }
   }
 }

@@ -1,0 +1,12 @@
+@use '../abstracts' as *;
+
+:root {
+  --padding-block-start-con: 5rem;
+  --padding-inline-con: 3rem;
+  --padding-nav-menu: var(--padding-block-start-con) var(--padding-inline-con);
+
+  @include breakpoint(large) {
+    --padding-block-start-con: 4rem;
+    --padding-inline-con: 2rem;
+  }
+}

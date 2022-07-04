@@ -1,37 +1,41 @@
 @use '../abstracts' as *;
 
 .card {
-  $duration: 250ms;
+  $duration: 400ms;
   width: min(100%, rem(850));
   position: relative;
 
   &__picture {
     position: relative;
 
-    &::after {
+    &::after,
+    &::before {
       content: '';
       width: 100%;
       height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+      transition: transform $duration ease;
     }
 
     &::before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      background-color: hsla(0, 0%, 100%, 0.8);
+      background-color: hsla(0, 0%, 100%, 0.7);
       transform: scaleY(0);
       transform-origin: bottom;
-      transition: transform 300ms ease;
 
       .card:hover & {
         transform: scaleY(1);
+      }
+    }
+
+    &::after {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent);
+      transform: scaleY(1);
+      transform-origin: top;
+
+      .card:hover & {
+        transform: scaleY(0);
       }
     }
   }
@@ -44,67 +48,50 @@
   }
 
   &__content {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    left: rem(40);
-    bottom: rem(40);
-
-    &::after {
-      content: attr(data-text);
-      width: 9ch;
-      position: absolute;
-      top: 0;
-      left: 0;
-      font-family: $ff-josefin-sans;
-      font-weight: 300;
-      color: $clr-black;
-      text-transform: uppercase;
-      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-      transition: clip-path $duration ease;
-      z-index: 10;
-
-      .card:nth-child(4) & {
-        width: 4ch;
-      }
-
-      .card:hover & {
-        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
-      }
-    }
+    top: 0;
+    left: 0;
   }
 
   &__heading {
     width: 9ch;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    margin-inline-start: rem(40);
+    padding-block-end: rem(40);
     transition: clip-path $duration ease;
-
-    &:not(.text-fill) {
-      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
-    }
 
     .card:nth-child(4) & {
       width: 4ch;
     }
 
-    .card:hover &:not(.text-fill) {
+    &:not(&--hover) {
+      clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    }
+
+    .card:hover &:not(&--hover) {
       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      pointer-events: none;
+    }
+
+    &--hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      color: $clr-black;
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+      
+      .card:hover & {
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+      }
+
+      &::before {
+        content: attr(data-heading-text);
+      }
     }
   }
 }
-
-// .text-fill {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   color: $clr-red;
-//   font-family: $ff-josefin-sans;
-//   font-weight: 300;
-//   text-transform: uppercase;
-//   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-
-//   &::before {
-//     content: attr(data-text);
-//   }
-
-//   .card:hover & {
-//     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
-//   }
-// }

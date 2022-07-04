@@ -5,6 +5,10 @@
 
   &__picture {
     justify-content: center;
+
+    @include breakpoint(large) {
+      justify-content: flex-start;
+    }
   }
 
   &__img {
@@ -12,13 +16,32 @@
     height: rem(448);
     object-fit: cover;
     object-position: top center;
+
+    @include breakpoint(large) {
+      width: min(100%, rem(731));
+      height: rem(500);
+    }
   }
 
   &__content {
     padding: rem(95) rem(54);
+
+    @include breakpoint(large) {
+      width: rem(542);
+      height: rem(316);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: $clr-white;
+      padding: rem(95) 0 0 rem(97);
+    }
   }
 
   &__heading {
     margin-block-end: rem(36);
+
+    @include breakpoint(large) {
+      margin-block-end: rem(28);
+    }
   }
 }

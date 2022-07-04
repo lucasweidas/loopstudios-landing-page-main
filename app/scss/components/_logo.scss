@@ -7,4 +7,9 @@
     width: rem(288);
     height: rem(48);
   }
+
+  @include breakpoint(medium) {
+    width: rem(192);
+    height: rem(32);
+  }
 }

@@ -14,4 +14,8 @@
     width: rem(38);
     height: rem(38);
   }
+
+  @include breakpoint(large) {
+    display: none;
+  }
 }
