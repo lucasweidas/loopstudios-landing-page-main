@@ -57,7 +57,7 @@
     }
 
     @include breakpoint(large) {
-      grid-template-columns: repeat(auto-fill, minmax(rem(256), 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(rem(256), 1fr));
       gap: rem(30);
       margin-block: rem(80) 0;
     }

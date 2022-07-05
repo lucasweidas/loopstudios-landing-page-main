@@ -640,7 +640,7 @@ a:visited {
 }
 @media screen and (min-width: 64em) {
   .creations__cards {
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: 1.875rem;
     margin-block: 5rem 0;
   }
