@@ -1,17 +1,19 @@
 @use '../abstracts' as *;
 
 .header {
+  --black-gradient: rgba(0, 0, 0, 0.1);
   width: 100%;
   height: rem(700);
-  background: url('../../images/mobile/image-hero.jpg') top left / cover no-repeat;
+  background: linear-gradient(var(--black-gradient), var(--black-gradient)), url('../../images/mobile/image-hero.jpg') top left / cover no-repeat;
 
   @include breakpoint(medium) {
     height: rem(1300);
   }
 
   @include breakpoint(large) {
+    --black-gradient: rgba(0, 0, 0, 0.4);
     height: rem(650);
-    background-image: url('../../images/desktop/image-hero.jpg');
+    background-image: linear-gradient(var(--black-gradient), var(--black-gradient)), url('../../images/desktop/image-hero.jpg');
   }
 
   &__banner {
