@@ -576,7 +576,7 @@ a:visited {
 }
 @media screen and (min-width: 64em) {
   .interactive__heading {
-    margin-block-end: 1.75rem;
+    margin: 0 0 1.75rem;
   }
 }
 
