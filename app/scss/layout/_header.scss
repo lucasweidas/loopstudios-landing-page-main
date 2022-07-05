@@ -2,8 +2,12 @@
 
 .header {
   width: 100%;
-  height: rem(1300);
+  height: rem(700);
   background: url('/images/mobile/image-hero.jpg') top left / cover no-repeat;
+
+  @include breakpoint(medium) {
+    height: rem(1300);
+  }
 
   @include breakpoint(large) {
     height: rem(650);
@@ -12,9 +16,15 @@
 
   &__banner {
     width: fit-content;
-    border: rem(4) solid $clr-white;
-    padding: rem(50) rem(48) rem(34);
-    margin: rem(324) auto 0;
+    border: rem(3) solid $clr-white;
+    padding: clamp(rem(20), 7vw, rem(40)) clamp(rem(18), 6vw, rem(38)) clamp(rem(14), 5vw, rem(28));
+    margin: rem(200) auto 0;
+
+    @include breakpoint(medium) {
+      border-width: rem(4);
+      padding: rem(50) rem(48) rem(34);
+      margin-block-start: rem(324);
+    }
 
     @include breakpoint(large) {
       width: min(100%, rem(652));

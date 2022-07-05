@@ -1,9 +1,14 @@
 @use '../abstracts' as *;
 
 :root {
-  --padding-block-start-con: 5rem;
-  --padding-inline-con: 3rem;
-  --padding-nav-menu: var(--padding-block-start-con) var(--padding-inline-con);
+  --padding-block-start-con: 2.5rem;
+  --padding-inline-con: clamp(1.25rem, 7vw, 1.5rem);
+  --padding-nav-menu: var(--padding-block-start-con) var(--padding-inline-con) calc(2 * var(--padding-block-start-con));
+
+  @include breakpoint(medium) {
+    --padding-block-start-con: 5rem;
+    --padding-inline-con: 3rem;
+  }
 
   @include breakpoint(large) {
     --padding-block-start-con: 4rem;

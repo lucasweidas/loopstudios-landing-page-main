@@ -1,6 +1,8 @@
 @use '../abstracts' as *;
 
 .socials {
+  margin-block-start: rem(50);
+
   @include breakpoint(medium) {
     margin-block-start: rem(100);
   }
@@ -11,19 +13,34 @@
   }
 
   &__link {
-    width: rem(48);
-    height: rem(48);
+    --small-icon-w: 1.5rem;
+    --small-icon-h: var(--small-icon-w);
+    --large-icon-w: 3rem;
+    --large-icon-h: var(--large-icon-w);
+    width: var(--small-icon-w);
+    height: var(--small-icon-h);
+
+    @include breakpoint(medium) {
+      width: var(--large-icon-w);
+      height: var(--large-icon-h);
+    }
 
     @include breakpoint(large) {
-      width: rem(24);
-      height: rem(24);
+      width: var(--small-icon-w);
+      height: var(--small-icon-h);
     }
 
     &--twitter {
-      height: rem(40);
+      --small-icon-h: 1.25rem;
+      height: var(--small-icon-h);
+
+      @include breakpoint(medium) {
+        --large-icon-w: 2.5rem;
+        height: var(--large-icon-h);
+      }
 
       @include breakpoint(large) {
-        height: rem(20);
+        height: var(--small-icon-h);
       }
     }
   }
@@ -32,7 +49,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: rem(32);
+    column-gap: rem(20);
+
+    @include breakpoint(medium) {
+      column-gap: rem(32);
+    }
 
     @include breakpoint(large) {
       column-gap: rem(16);

@@ -10,10 +10,13 @@ a,
   text-transform: uppercase;
 }
 
-h2,
-h3 {
-  font-size: rem(64);
+h2 {
+  font-size: rem(30);
   text-align: center;
+
+  @include breakpoint(medium) {
+    font-size: rem(64);
+  }
 
   @include breakpoint(large) {
     font-size: rem(48);
@@ -22,11 +25,14 @@ h3 {
 }
 
 p {
-  font-size: rem(30);
   font-family: $ff-alata;
   font-weight: 400;
   text-align: center;
-  line-height: rem(49);
+
+  @include breakpoint(medium) {
+    font-size: rem(30);
+    line-height: rem(49);
+  }
 
   @include breakpoint(large) {
     font-size: rem(15);
@@ -42,10 +48,16 @@ a:visited {
 }
 
 .header__heading {
-  font-size: rem(78);
-  line-height: rem(76);
-  letter-spacing: rem(1);
+  font-size: clamp(rem(28), 9vw, rem(40));
+  line-height: 1.1em;
+  letter-spacing: rem(0.5);
   color: $clr-white;
+
+  @include breakpoint(medium) {
+    font-size: rem(78);
+    line-height: rem(76);
+    letter-spacing: rem(1);
+  }
 
   @include breakpoint(large) {
     font-size: rem(71);
@@ -55,20 +67,26 @@ a:visited {
 
 .menu__link {
   font-family: $ff-alata;
+  font-size: rem(16);
   font-weight: 300;
   text-transform: none;
   color: $clr-white;
 
-  @include breakpoint-down(large) {
-    &--nav {
-      font-family: $ff-josefin-sans;
-      font-size: rem(48);
-      text-transform: uppercase;
-    }
-  }
-
   @include breakpoint(medium) {
     font-size: rem(30);
+  }
+
+  &--nav {
+    font-size: rem(28);
+
+    @include breakpoint-down(large) {
+      font-family: $ff-josefin-sans;
+      text-transform: uppercase;
+    }
+
+    @include breakpoint(medium) {
+      font-size: rem(48);
+    }
   }
 
   @include breakpoint(large) {
@@ -82,10 +100,15 @@ a:visited {
 
 .creations__link {
   font-family: $ff-alata;
-  font-size: rem(28);
+  font-size: rem(18);
   font-weight: 400;
-  letter-spacing: rem(10);
+  letter-spacing: rem(4);
   color: $clr-black;
+
+  @include breakpoint(medium) {
+    font-size: rem(28);
+    letter-spacing: rem(10);
+  }
 
   @include breakpoint(large) {
     font-size: rem(12);
@@ -94,10 +117,14 @@ a:visited {
 }
 
 .card__heading {
-  font-size: rem(47);
-  text-align: start;
+  font-size: rem(26);
   letter-spacing: rem(0.7);
+  text-align: start;
   color: $clr-white;
+
+  @include breakpoint(medium) {
+    font-size: rem(47);
+  }
 
   @include breakpoint(large) {
     font-size: rem(32);
@@ -120,7 +147,12 @@ a:visited {
 
   &__attribution {
     font-size: rem(15);
+    line-height: 1.8em;
     color: $clr-white;
+
+    @include breakpoint(medium) {
+      line-height: normal;
+    }
 
     a {
       font-family: inherit;

@@ -4,7 +4,11 @@
   display: grid;
   justify-items: center;
   grid-template-areas: 'heading' 'cards' 'link';
-  margin-block-start: rem(101);
+  margin-block-start: rem(30);
+
+  @include breakpoint(medium) {
+    margin-block-start: rem(101);
+  }
 
   @include breakpoint(large) {
     justify-items: flex-start;
@@ -15,22 +19,27 @@
   }
 
   &__link {
-    width: rem(316);
-    height: rem(82);
+    width: rem(180);
+    height: rem(54);
     grid-area: link;
     border: rem(2) solid $clr-black;
     transition: 200ms ease;
     transition-property: color, background-color;
 
-    &:hover,
-    &:focus-visible {
-      background-color: $clr-black;
-      color: $clr-white;
+    @include breakpoint(medium) {
+      width: rem(316);
+      height: rem(82);
     }
 
     @include breakpoint(large) {
       width: rem(159);
       height: rem(42);
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: $clr-black;
+      color: $clr-white;
     }
   }
 
@@ -39,8 +48,13 @@
     grid-area: cards;
     display: grid;
     justify-items: center;
-    row-gap: rem(48);
-    margin-block: rem(96) rem(67);
+    row-gap: rem(30);
+    margin-block: rem(50) rem(40);
+
+    @include breakpoint(medium) {
+      row-gap: rem(48);
+      margin-block: rem(96) rem(67);
+    }
 
     @include breakpoint(large) {
       grid-template-columns: repeat(auto-fill, minmax(rem(256), 1fr));

@@ -1,6 +1,8 @@
 @use '../abstracts' as *;
 
 .logo {
+  width: rem(168);
+  height: rem(28);
   display: inline-flex;
 
   @include breakpoint(medium) {

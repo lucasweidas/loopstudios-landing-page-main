@@ -5,11 +5,15 @@
   --timing: ease;
   --transition: var(--duration) var(--timing);
   width: min(100%, rem(850));
-  height: rem(240);
+  height: rem(200);
   position: relative;
 
+  @include breakpoint(medium) {
+    height: rem(240);
+  }
+
   @include breakpoint(large) {
-    --duration: 350ms;
+    --duration: 300ms;
     --timing: ease-in-out;
     width: 100%;
     height: rem(450);
@@ -47,11 +51,11 @@
     }
 
     &::after {
-      background-image: linear-gradient(to right, var(--bg-black), transparent);
+      background-image: linear-gradient(to right, var(--bg-black), transparent 80%);
       clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 
       @include breakpoint(large) {
-        background-image: linear-gradient(to bottom, transparent 20%, var(--bg-black));
+        background-image: linear-gradient(to bottom, transparent 25%, var(--bg-black));
       }
 
       .card:hover & {
@@ -75,13 +79,18 @@
   }
 
   &__heading {
-    width: 9ch;
+    max-width: 9ch;
     height: 100%;
     display: flex;
     align-items: flex-end;
-    margin-inline-start: rem(40);
-    padding-block-end: rem(40);
+    margin-inline-start: rem(28);
+    padding-block-end: rem(28);
     transition: clip-path var(--transition);
+
+    @include breakpoint(medium) {
+      margin-inline-start: rem(40);
+      padding-block-end: rem(40);
+    }
 
     @include breakpoint(large) {
       margin-inline-start: rem(42);
@@ -89,7 +98,7 @@
     }
 
     .card:nth-child(4) & {
-      width: 4ch;
+      max-width: 4ch;
     }
 
     &:not(&--hover) {

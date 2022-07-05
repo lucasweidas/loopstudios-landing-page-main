@@ -13,9 +13,13 @@
 
   &__img {
     width: min(100%, rem(850));
-    height: rem(448);
+    height: rem(380);
     object-fit: cover;
     object-position: top center;
+
+    @include breakpoint(medium) {
+      height: rem(448);
+    }
 
     @include breakpoint(large) {
       width: min(100%, rem(731));
@@ -24,7 +28,14 @@
   }
 
   &__content {
-    padding: rem(95) rem(54);
+    max-width: rem(542);
+    padding: rem(64) 0;
+    margin-inline: auto;
+
+    @include breakpoint(medium) {
+      max-width: none;
+      padding: rem(95) rem(54);
+    }
 
     @include breakpoint(large) {
       width: rem(542);
@@ -37,7 +48,12 @@
   }
 
   &__heading {
-    margin-block-end: rem(36);
+    max-width: 14ch;
+    margin: 0 auto rem(20);
+
+    @include breakpoint(medium) {
+      margin-block-end: rem(36);
+    }
 
     @include breakpoint(large) {
       margin-block-end: rem(28);

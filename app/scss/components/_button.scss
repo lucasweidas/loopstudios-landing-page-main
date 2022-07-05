@@ -5,17 +5,27 @@
   border: none;
   cursor: pointer;
 
+  @include breakpoint(large) {
+    display: none;
+  }
+
   &--hamburger {
-    width: rem(48);
-    height: rem(32);
+    width: rem(32);
+    height: rem(24);
+
+    @include breakpoint(medium) {
+      width: rem(48);
+      height: rem(32);
+    }
   }
 
   &--close {
-    width: rem(38);
-    height: rem(38);
-  }
+    width: rem(24);
+    height: rem(24);
 
-  @include breakpoint(large) {
-    display: none;
+    @include breakpoint(medium) {
+      width: rem(38);
+      height: rem(38);
+    }
   }
 }

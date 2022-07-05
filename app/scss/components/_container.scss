@@ -6,14 +6,12 @@
   margin-inline: auto;
 
   &--header {
-    @include breakpoint(medium) {
-      padding-block-start: var(--padding-block-start-con);
-    }
-    @include breakpoint(large) {
-    }
+    padding-block-start: var(--padding-block-start-con);
   }
 
   &--main {
+    padding-block: rem(100);
+
     @include breakpoint(medium) {
       padding-block: rem(192);
     }
@@ -23,6 +21,8 @@
   }
 
   &--footer {
+    padding-block: rem(60) rem(24);
+
     @include breakpoint(medium) {
       padding-block: rem(110) rem(32);
     }
